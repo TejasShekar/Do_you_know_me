@@ -1,0 +1,23 @@
+{
+  "name": "how_well_you_know_me",
+  "version": "1.0.0",
+  "description": "A CLI based fun quiz game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TejasShekar/markOne-how_well_you_know_me.git"
+  },
+  "author": "Tejas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TejasShekar/markOne-how_well_you_know_me/issues"
+  },
+  "homepage": "https://github.com/TejasShekar/markOne-how_well_you_know_me#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "readline-sync": "^1.4.10"
+  }
+}
