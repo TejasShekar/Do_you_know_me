@@ -1,10 +1,16 @@
+/* Before running this program, run the following commands in terminal to install dependencies.
+1. npm install readline-sync
+2. npm install chalk
+*/
 let readlinesync = require("readline-sync");
+let chalk = require("chalk");
 let userName = readlinesync.question("Hey there ! \nWhats's your name?\n");
 let score = 0;
-console.log("\nWelcome " + userName);
+console.log("\nWelcome " + chalk.green(userName));
 
 console.log(
-  "\nLet's see how well you know me !\nThe rules of this quiz game is simple AF.\nYou score 1 point if you answer correct.\nYou loose 1 point if you answer wrong\n"
+  chalk.underline("\nLet's see how well you know me !") +
+    "\nThe rules of this quiz game is simple AF.\nYou score 1 point if you answer correct.\nYou loose 1 point if you answer wrong\n"
 );
 
 console.log(
@@ -12,17 +18,17 @@ console.log(
 );
 
 let userVerifyAnswer = readlinesync.question(
-  "Calculate the below mathematical expression\n(25*(100+5)/5+125-50) = "
+  "Calculate the below mathematical expression\n25*(100+5)/(190-170+5) = "
 );
 //Use BODMAS to solve the above expression
 
 function ask(question, answer) {
   let userAnswer = readlinesync.question(question);
   if (userAnswer.toUpperCase() === answer.toUpperCase()) {
-    console.log("Right answer !");
+    console.log(chalk.green("Right answer !"));
     score = score + 1;
   } else {
-    console.log("Wrong answer");
+    console.log(chalk.red("Wrong answer"));
     score = score - 1;
   }
   console.log("Your current score is ", score);
@@ -51,16 +57,19 @@ let questions = [
   },
 ];
 
-if (userVerifyAnswer === "600") {
-  console.log("Right Answer !\nYou are a human.");
+if (userVerifyAnswer === "105") {
+  console.log(chalk.green("Right Answer !") + "\nYou are a human.");
 
   for (let i = 0; i < questions.length; i++) {
     let currentQuestion = questions[i];
     ask(currentQuestion.question, currentQuestion.answer);
   }
 
-  console.log("\n×-×-×-×-×-×-×-×||×-×-×-×-×-×-×-×\n\nThankyou for playing.");
-  console.log("\nYour final score is " + score);
+  console.log(
+    chalk.bgRed("\n×-×-×-×-×-×-×-×||×-×-×-×-×-×-×-×\n") +
+      chalk.bgBlue("\nThankyou for playing.")
+  );
+  console.log(chalk.bold("\nYour final score is " + score));
 
   /*You can make the below 'if' condition more concise to 
 	> if (score && score <= 2) 
