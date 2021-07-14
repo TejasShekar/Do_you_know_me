@@ -1,7 +1,3 @@
-/* Before running this program, run the following commands in terminal to install dependencies.
-1. npm install readline-sync
-2. npm install chalk
-*/
 let readlinesync = require("readline-sync");
 let chalk = require("chalk");
 let userName = readlinesync.question("Hey there ! \nWhats's your name?\n");
