@@ -9,7 +9,7 @@ let score = 0;
 console.log("\nWelcome " + chalk.green(userName));
 
 console.log(
-  chalk.underline("\nLet's see how well you know me !") +
+  chalk.underline("\nLETS'S SEE HOW WELL YOU KNOW ME !") +
     "\nThe rules of this quiz game is simple AF.\nYou score 1 point if you answer correct.\nYou loose 1 point if you answer wrong\n"
 );
 
