@@ -4,22 +4,19 @@ This is a small game based on CLI where you can find out whether you know me.
 
 # Installation
 
-Even though I have included required dependencies along with the Javascript file, you might have issues running it on your terminal. So, I would recommend you to install the below dependencies incase you have issues running the JS file.
+Even though I have included required dependencies along with the Javascript file, you may have issues running it on your terminal. So, I would recommend you to install the below dependencies, incase you have issues running the JS file.
 
 ## Dependencies
 
-Before running this program, run the following commands in terminal to install dependencies.
+Before running this program,
 
-To read input from user :
+We will need 
+1. readlinesync - to read input from user.
+2. chalk - to add colors and styles in the terminal
 
+You can install them by running the following commands in your terminal.
 ```bash
-npm install readline-sync
-```
-
-To add colors and styles in the terminal:
-
-```bash
-npm install chalk
+npm install readline-sync chalk
 ```
 
 ## Usage
