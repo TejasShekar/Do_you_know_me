@@ -2,7 +2,7 @@
 
 This is a small game based on CLI where you can find out whether you know me.
 
-# Installation
+## Installation
 
 Even though I have included required dependencies along with the Javascript file, you may have issues running it on your terminal. So, I would recommend you to install the below dependencies, incase you have issues running the JS file.
 
