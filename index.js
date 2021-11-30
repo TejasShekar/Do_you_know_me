@@ -75,7 +75,7 @@ if (userVerifyAnswer === "105") {
     console.log(
       "\nBy the way, you barely know me.\nWe should get along once this pandemic is over !"
     );
-  } else if (score > 3) {
+  } else if (score >= 3) {
     console.log(
       "\nWow! You know me well 😄 , but still let's catch-up after this Pandemic is over."
     );
