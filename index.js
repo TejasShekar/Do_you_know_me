@@ -1,3 +1,7 @@
+/* Before running this program, run the following commands in terminal to install dependencies.
+1. npm install readline-sync
+2. npm install chalk
+*/
 let readlinesync = require("readline-sync");
 let chalk = require("chalk");
 let userName = readlinesync.question("Hey there ! \nWhats's your name?\n");
@@ -5,7 +9,7 @@ let score = 0;
 console.log("\nWelcome " + chalk.green(userName));
 
 console.log(
-  chalk.underline("\nLETS'S SEE HOW WELL YOU KNOW ME !") +
+  chalk.underline("\nLet's see how well you know me !") +
     "\nThe rules of this quiz game is simple AF.\nYou score 1 point if you answer correct.\nYou loose 1 point if you answer wrong\n"
 );
 
