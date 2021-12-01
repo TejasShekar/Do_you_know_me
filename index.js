@@ -81,7 +81,7 @@ if (userVerifyAnswer === "105") {
     );
   } else if (score >= 3) {
     console.log(
-      "\nWow! You know me well 😄 , but still let's catch-up after this Pandemic is over."
+      "\nWow! You know me well 😄 , but still let's catch-up and get to know more about each other."
     );
   } else {
     console.log(
@@ -90,6 +90,6 @@ if (userVerifyAnswer === "105") {
   }
 } else {
   console.log(
-    "\nI didn't know you were weak in solving simple math question. Try again !!!"
+    "\nI didn't know you were weak in solving simple math question 😝. Try again !!!"
   );
 }
