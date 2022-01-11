@@ -74,6 +74,7 @@ if (userVerifyAnswer === "105") {
       console.log(
         "\nBy the way, you barely know me.\nWe should get along once this pandemic is over !"
       );
+      break;
     case 3:
     case 4:
     case 5:
