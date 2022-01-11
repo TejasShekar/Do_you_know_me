@@ -6,7 +6,7 @@ let readlinesync = require("readline-sync");
 let chalk = require("chalk");
 let userName = readlinesync.question("Hey there ! \nWhats's your name?\n");
 let score = 0;
-console.log("\nWelcome " + chalk.green(userName));
+console.log(`\nWelcome ${chalk.green(userName)}`);
 
 console.log(
   chalk.underline("\nLet's see how well you know me !") +
@@ -22,17 +22,14 @@ let userVerifyAnswer = readlinesync.question(
 );
 //Use BODMAS to solve the above expression
 
-function ask(question, answer) {
+const ask = (question, answer) => {
   let userAnswer = readlinesync.question(question);
-  if (userAnswer.toUpperCase() === answer.toUpperCase()) {
-    console.log(chalk.green("Right answer !"));
-    score = score + 1;
-  } else {
-    console.log(chalk.red("Wrong answer"));
-    score = score - 1;
-  }
-  console.log("Your current score is ", score);
-}
+  let result =
+    userAnswer.toUpperCase() === answer.toUpperCase()
+      ? { status: chalk.green("Right answer !"), count: (score += 1) }
+      : { status: chalk.red("Wrong answer !"), count: (score -= 1) };
+  console.log(result.status, `\nYour current score is ${result.count}`);
+};
 
 let questions = [
   {
@@ -49,7 +46,7 @@ let questions = [
   },
   {
     question: "\nWhat is my favorite subject ?\n",
-    answer: "Mathematics",
+    answer: "Chemistry",
   },
   {
     question: "\nWhich is my favorite TV Series ?\n",
@@ -58,10 +55,9 @@ let questions = [
 ];
 
 if (userVerifyAnswer === "105") {
-  console.log(chalk.green("Right Answer !") + "\nYou are a human.");
+  console.log(`${chalk.green("Right Answer !")}\n You are a human.`);
 
-  for (let i = 0; i < questions.length; i++) {
-    let currentQuestion = questions[i];
+  for (let currentQuestion of questions) {
     ask(currentQuestion.question, currentQuestion.answer);
   }
 
@@ -69,24 +65,27 @@ if (userVerifyAnswer === "105") {
     chalk.bgRed("\n×-×-×-×-×-×-×-×||×-×-×-×-×-×-×-×\n") +
       chalk.bgBlue("\nThankyou for playing.")
   );
-  console.log(chalk.bold("\nYour final score is " + score));
+  console.log(chalk.bold(`\nYour final score is ${score}`));
 
-  /*You can make the below 'if' condition more concise to 
-	> if (score && score <= 2) 
-	as well because score > 0 is truthy*/
-
-  if (score > 0 && score <= 2) {
-    console.log(
-      "\nBy the way, you barely know me.\nWe should get along once this pandemic is over !"
-    );
-  } else if (score >= 3) {
-    console.log(
-      "\nWow! You know me well 😄 , but still let's catch-up and get to know more about each other."
-    );
-  } else {
-    console.log(
-      "\nBut, seriously ? Negative score ? 😐\nDo you even know me ?!!\nI think we should spend more time together and know about each other."
-    );
+  switch (score) {
+    case 0:
+    case 1:
+    case 2:
+      console.log(
+        "\nBy the way, you barely know me.\nWe should get along once this pandemic is over !"
+      );
+    case 3:
+    case 4:
+    case 5:
+      console.log(
+        "\nWow! You know me well 😄 , but still let's catch-up and get to know more about each other."
+      );
+      break;
+    default:
+      console.log(
+        "\nBut, seriously ? Negative score ? 😐\nDo you even know me ?!!\nI think we should spend more time together and know about each other."
+      );
+      break;
   }
 } else {
   console.log(
